@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartão de Visita - Lucas Gonzatti</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: url(card_lucas.png) no-repeat center top;
+      background-size: cover;
+    }
+
+    .content {
+      /*background: rgba(230, 249, 255, 0.95);*/
+      padding: 10px;
+      text-align: center;
+      /*border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);*/
+    }
+
+    .content p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #003366;
+    }
+
+    .icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .icons a {
+      color: #fff;
+      background: #0077cc;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    .icons a:hover {
+      background: #005fa3;
+      transform: scale(1.1);
+    }
+
+    .btn-salvar {
+      background: #28a745;
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-salvar:hover {
+      background: #1f7e34;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .content p {
+        font-size: 14px;
+      }
+
+      .icons a {
+        padding: 14px;
+        font-size: 20px;
+      }
+
+      .btn-salvar {
+        font-size: 16px;
+        padding: 12px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Bloco de informações sobre a imagem -->
+   <br>
+   <br>
+  <div class="content">
+    <p><i class="fas fa-phone"></i> (48) 99967-1427</p>
+    <p><i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</p>
+    <p><i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC</p>
+    
+    <br>
+    <p style="color: red;"><em>Clique nos ícones abaixo:</em></p>
+
+    <div class="icons">
+      <a href="https://wa.me/5548999671427" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.mirandaaluminio.com.br/" target="_blank"><i class="fas fa-globe"></i></a>
+      <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Botão de salvar contato -->
+    <a href="Lucas_Gonzatti.vcf" class="btn-salvar" download>
+      <i class="fas fa-address-card"></i> Salvar Contato
+    </a>
+  </div>
+</body>
+</html>
