@@ -7,129 +7,110 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: url(card_lucas.png) no-repeat center top;
-  background-size: cover;
-  background-color: #f0f0f0;
-}
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: url(card_lucas.png) no-repeat center top;
+      background-size: cover;
+    }
 
-/* Bloco de conteúdo */
-.content {
-  padding: 10px;
-  text-align: center;
-  margin-top: auto;
-  width: 90%;
-  max-width: 500px;
-  align-self: center;
-  /*background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);*/
-}
+    .content {
+      /*background: rgba(230, 249, 255, 0.95);*/
+      padding: 10px;
+      text-align: center;
+      /*border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);*/
+      margin-top: auto; /* força o card a ficar embaixo */
+      width: 90%;
+      max-width: 500px;
+      align-self: center; /* centraliza no desktop */
+    }
 
-/* Texto */
-.content p {
-  margin: 8px 0;
-  font-size: 16px;
-  color: white;
-}
+    .content p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: white;
+    }
 
-/* Ícones */
-.icons {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    .icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-.icons a {
-  color: #fff;
-  background: #0077cc;
-  padding: 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  transition: 0.3s;
-}
+    .icons a {
+      color: #fff;
+      background: #0077cc;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 22px;
+      transition: 0.3s;
+    }
 
-.icons a:hover {
-  background: #005fa3;
-  transform: scale(1.1);
-}
+    .icons a:hover {
+      background: #005fa3;
+      transform: scale(1.1);
+    }
 
-/* Botão */
-.btn-salvar {
-  background: #28a745;
-  color: #fff;
-  padding: 14px 24px;
-  border: none;
-  border-radius: 25px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
-}
+    .btn-salvar {
+      background: #28a745;
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+    }
 
-.btn-salvar:hover {
-  background: #1f7e34;
-  transform: scale(1.05);
-}
+    .btn-salvar:hover {
+      background: #1f7e34;
+      transform: scale(1.05);
+    }
 
-/* Ajustes em telas menores */
-@media (max-width: 500px) {
-  body {
-    background-size: contain;       /* garante que a imagem inteira apareça */
-    background-position: top center;
-    max-height: 90vh;              /* limita a altura da tela a 90% */
-    background-repeat: no-repeat;
-  }
+    @media (max-width: 500px) {
+      .content p {
+        font-size: 14px;
+      }
 
-  .content {
-    padding: 8px;
-    width: 95%;
-  }
+      .icons a {
+        padding: 14px;
+        font-size: 20px;
+      }
 
-  .content p {
-    font-size: 14px;
-  }
-
-  .icons a {
-    padding: 14px;
-    font-size: 20px;
-  }
-
-  .btn-salvar {
-    font-size: 16px;
-    padding: 12px 18px;
-  }
-}
+      .btn-salvar {
+        font-size: 16px;
+        padding: 12px 18px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Bloco de informações sobre a imagem -->
-  <br>
-  
+   
   <div class="content">
-    <!-- <p style="color: red;"><em>Clique nos ícones abaixo:</em></p> -->
-
     <div class="icons">
       <a href="https://wa.me/5548999671427" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.mirandaaluminio.com.br/" target="_blank"><i class="fas fa-globe"></i></a>
       <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div> 
+    </div>
     <br>
     <p><i class="fas fa-phone"></i> (48) 99967-1427</p>
     <p><i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</p>
     <p><i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC</p>
-    <br>
+    
+    
     <!-- Botão de salvar contato -->
     <a href="Lucas_Gonzatti.vcf" class="btn-salvar" download>
       <i class="fas fa-address-card"></i> Salvar Contato
