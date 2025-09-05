@@ -92,33 +92,42 @@
     .btn-salvar:hover { background:#1f7e34; transform: translateY(-1px); }
 
     /* CELULAR: deixa tudo caber sem rolagem e mantém o botão visível */
-    @media (max-width: 520px) {
-      :root{
-        --bottom-offset: 20vh;  /* sobe um pouco mais no mobile */
-        --icon-size: 50px;
-        --gap: 16px;
-        --text-size: 15px;
-      }
-    }
+   :root {
+  --bottom-offset: 12vh;   /* valor padrão (celular pequeno e médio) */
+  --icon-size: 50px;
+  --gap: 16px;
+  --text-size: 15px;
+}
 
-    /* TELAS ALTAS (desktop/grandes): sobe um pouco mais para não ficar sobre a foto */
-    @media (min-width: 768px) {
-      :root{ --bottom-offset: 24vh; }
-    }
-    @media (min-width: 1200px) {
-      :root{ --bottom-offset: 26vh; }
-    }
+/* Tablet (a partir de ~600px de largura) */
+@media (min-width: 600px) {
+  :root {
+    --bottom-offset: 14vh; /* sobe um pouco no tablet */
+    --icon-size: 54px;
+    --gap: 18px;
+    --text-size: 16px;
+  }
+}
 
-    /* Telas muito baixas (ex.: split-screen): diminui espaços pra evitar rolagem */
-    @media (max-height: 660px) {
-      :root{
-        --bottom-offset: 16vh;
-        --icon-size: 46px;
-        --gap: 12px;
-        --text-size: 14px;
-      }
+/* Desktop médio (a partir de ~992px) */
+@media (min-width: 992px) {
+  :root {
+    --bottom-offset: 16vh; /* mais centralizado no desktop */
+    --icon-size: 56px;
+    --gap: 20px;
+    --text-size: 16px;
+  }
+}
+
+/* Desktop grande (a partir de ~1400px) */
+@media (min-width: 1400px) {
+  :root {
+    --bottom-offset: 18vh; /* sobe mais em telas muito grandes */
+  }
+}
+
       .btn-salvar { padding: 10px 16px; font-size: 15px; }
-    }
+    
   </style>
 </head>
 <body>
