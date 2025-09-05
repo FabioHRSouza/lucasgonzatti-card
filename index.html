@@ -1,148 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cartão de Visita - Lucas Gonzatti</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
+    :root{
+      /* distância do bloco em relação à base do cartão (quanto MAIOR, mais pra cima) */
+      --bottom-offset: 18vh;
+      --icon-size: 54px;
+      --gap: 18px;
+      --text-size: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    /* fundo da página (sólido). O cartão fica dentro dele. */
     body {
       margin: 0;
+      display: grid;
+      place-items: center;
+      background: #0b0b52; /* cor próxima do roxo/azul do seu card, não aparece no mobile porque o card ocupa 100% da altura */
       font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: url(card_lucas.png) no-repeat center top;
-      background-size: cover;
+      color: #fff;
     }
 
+    /* CARTÃO: mantém proporção visual e impede “amontoar” em telas grandes */
+    .card {
+      position: relative;
+      width: min(100vw, 520px);  /* limita largura no desktop */
+      height: 100dvh;            /* ocupa toda a altura da janela no celular e desktop */
+      max-height: 1000px;        /* limite para telas gigantes */
+      background: url(card_lucas.png) no-repeat center top / cover;
+      overflow: hidden;
+    }
+
+    /* Conteúdo posicionado acima da base do cartão */
     .content {
-      padding: 10px;
-      text-align: center;
-      margin-top: auto;
-      width: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: var(--bottom-offset);
+      width: 88%;
       max-width: 500px;
-      align-self: center;
-      margin-bottom: 40px; /* Subir tudo um pouco */
-    }
-
-    .content p {
-      margin: 8px 0;
-      font-size: 16px;
-      color: white;
+      text-align: center;
     }
 
     .icons {
-      margin: 10px 0 20px; /* diminui o espaço e sobe os ícones */
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .content .role p a {
-      color: white;
-      font-weight: 500;
-      margin-bottom: 15px;
-      text-decoration: none;
-      transition: background 0.3s;
+      gap: var(--gap);
+      margin: 0 0 14px 0;
     }
 
     .icons a {
-      color: #fff;
-      background: #0077cc;
-      padding: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--icon-size);
+      height: var(--icon-size);
       border-radius: 50%;
+      background: #0b74c7;
+      color: #fff;
       font-size: 22px;
-      transition: 0.3s;
+      transition: transform .2s ease, background .2s ease;
     }
+    .icons a:hover { transform: scale(1.08); background: rebeccapurple; }
 
-    .icons a:hover {
-      background: rebeccapurple;
-      transform: scale(1.1);
-    }
+    .role p { margin: 8px 0; font-size: var(--text-size); }
+    .role p a { color: #fff; text-decoration: none; }
 
     .btn-salvar {
+      margin-top: 14px;
       background: #28a745;
       color: #fff;
       padding: 12px 22px;
-      border: none;
-      border-radius: 25px;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
+      border-radius: 24px;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: 0.3s;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+      font-size: 17px;
     }
+    .btn-salvar:hover { background:#1f7e34; transform: translateY(-1px); }
 
-    .btn-salvar:hover {
-      background: #1f7e34;
-      transform: scale(1.05);
-    }
-
-    /* Ajuste no celular */
-    @media (max-width: 500px) {
-      body {
-        background-size: contain; /* diminui altura da imagem */
-        background-position: top;
-      }
-
-      .content {
-        margin-bottom: 20px; /* aproxima mais do final da tela */
-      }
-
-      .content p {
-        font-size: 14px;
-      }
-
-      .icons a {
-        padding: 12px;
-        font-size: 20px;
-      }
-
-      .btn-salvar {
-        font-size: 15px;
-        padding: 10px 16px;
+    /* CELULAR: deixa tudo caber sem rolagem e mantém o botão visível */
+    @media (max-width: 520px) {
+      :root{
+        --bottom-offset: 20vh;  /* sobe um pouco mais no mobile */
+        --icon-size: 50px;
+        --gap: 16px;
+        --text-size: 15px;
       }
     }
 
-    /* Ajuste no desktop para responsividade */
+    /* TELAS ALTAS (desktop/grandes): sobe um pouco mais para não ficar sobre a foto */
     @media (min-width: 768px) {
-      body {
-        justify-content: center; /* centraliza melhor em telas grandes */
-        background-attachment: fixed; /* dá um efeito mais limpo */
-      }
+      :root{ --bottom-offset: 24vh; }
+    }
+    @media (min-width: 1200px) {
+      :root{ --bottom-offset: 26vh; }
+    }
 
-      .content {
-        margin-top: 100px; /* joga o bloco para baixo, evitando sobreposição */
+    /* Telas muito baixas (ex.: split-screen): diminui espaços pra evitar rolagem */
+    @media (max-height: 660px) {
+      :root{
+        --bottom-offset: 16vh;
+        --icon-size: 46px;
+        --gap: 12px;
+        --text-size: 14px;
       }
+      .btn-salvar { padding: 10px 16px; font-size: 15px; }
     }
   </style>
 </head>
 <body>
-  <!-- Bloco de informações sobre a imagem -->
-  <div class="content">
-    <div class="icons">
-      <a href="https://wa.me/5548999671427" title="whatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.mirandaaluminio.com.br/" title="site" target="_blank"><i class="fas fa-globe"></i></a>
-      <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" title="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+  <div class="card">
+    <div class="content">
+      <div class="icons">
+        <a href="https://wa.me/5548999671427" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.mirandaaluminio.com.br/" title="Site" target="_blank"><i class="fas fa-globe"></i></a>
+        <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <div class="role">
+        <p><a href="tel:+5548999671427" title="Telefone"><i class="fas fa-phone"></i> (48) 99967-1427</a></p>
+        <p><a href="mailto:vendas.sc3@mirandaaluminio.com.br" title="Email"><i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</a></p>
+        <p>
+          <a href="https://maps.app.goo.gl/u97suLoUfDDxdszCA" target="_blank" title="Endereço">
+            <i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC
+          </a>
+        </p>
+      </div>
+
+      <a href="Lucas_Gonzatti.vcf" class="btn-salvar" download>
+        <i class="fas fa-address-card"></i> Salvar Contato
+      </a>
     </div>
-    <div class="role">
-      <p><a href="tel:+5548999671427" title="Telefone"><i class="fas fa-phone"></i> (48) 99967-1427</a></p>
-      <p><a href="mailto:vendas.sc3@mirandaaluminio.com.br" title="Email"><i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</a></p>
-      <p><a href="https://maps.app.goo.gl/u97suLoUfDDxdszCA" target="_blank" title="Endereço"><i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC</a></p>
-    </div>
-    <br>
-    <!-- Botão de salvar contato -->
-    <a href="Lucas_Gonzatti.vcf" class="btn-salvar" download>
-      <i class="fas fa-address-card"></i> Salvar Contato
-    </a>
   </div>
 </body>
 </html>
