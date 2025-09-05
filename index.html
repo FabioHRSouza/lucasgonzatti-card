@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cartão de Visita - Lucas Gonzatti</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
       margin: 0;
@@ -41,7 +43,15 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 24px;
+    }
+
+    .content .role p a {
+      color: white;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-decoration: none;
+      transition: background 0.3s;
     }
 
     .icons a {
@@ -49,12 +59,12 @@
       background: #0077cc;
       padding: 16px;
       border-radius: 50%;
-      font-size: 22px;
+      font-size: 25px;
       transition: 0.3s;
     }
 
     .icons a:hover {
-      background: #005fa3;
+      background: rebeccapurple;
       transform: scale(1.1);
     }
 
@@ -101,15 +111,17 @@
    
   <div class="content">
     <div class="icons">
-      <a href="https://wa.me/5548999671427" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.mirandaaluminio.com.br/" target="_blank"><i class="fas fa-globe"></i></a>
-      <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5548999671427" title="whatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.mirandaaluminio.com.br/" title="site" target="_blank"><i class="fas fa-globe"></i></a>
+      <a href="https://www.instagram.com/gonzatti.mirandaaluminio/" title="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
     <br>
-    <p><i class="fas fa-phone"></i> (48) 99967-1427</p>
-    <p><i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</p>
-    <p><i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC</p>
-    
+    <div class="role">
+    <p><a href="tel:+5548999671427" title="Telefone"><i class="fas fa-phone"></i> (48) 99967-1427</a></p>
+    <p> <a href="mailto:vendas.sc3@mirandaaluminio.com.br" title="Email">
+          <i class="fas fa-envelope"></i> vendas.sc3@mirandaaluminio.com.br</a></p>
+    <p><a href="https://maps.app.goo.gl/u97suLoUfDDxdszCA" target="_blank" title="Endereço"><i class="fas fa-map-marker-alt"></i> R. Hipólito Henrique Pfleger, 5263<br>Serraria - São José - SC</a> </p>
+    </div>
     <br>
     <br>
     <!-- Botão de salvar contato -->
